@@ -28,4 +28,10 @@ public class MainActivity extends AppCompatActivity {
 
         startActivity(bemVindo);
     }
+
+    public void startHelpNow(android.view.View view){
+        Intent helpNow = new Intent(this, HelpNowFirstPage.class);
+
+        startActivity(helpNow);
+    }
 }
