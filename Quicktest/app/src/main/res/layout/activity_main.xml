@@ -95,6 +95,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginBottom="1dp"
         android:background="@drawable/health_help2"
+        android:onClick="startHelpNow"
         app:layout_constraintBottom_toTopOf="@+id/textView7"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"
