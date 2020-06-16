@@ -2,6 +2,7 @@ package com.example.quicktest;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.SeekBar;
@@ -157,6 +158,15 @@ public class HelpNowFirstPage extends AppCompatActivity {
         pickValueSweatSeekBar();
         pickValueSadnessSeekBar();
         pickValueStressSeekBar();
+    }
+
+    public void next (android.view.View view){
+        Intent display = new Intent(this, HelpNowResults.class);
+
+        display.putExtra("values", progressChangedValue);
+
+        startActivity(display);
+
     }
 
 }
