@@ -7,19 +7,19 @@
     tools:context=".HelpNowFirstPage">
 
     <SeekBar
-        android:id="@+id/seekBar9"
+        android:id="@+id/seekBarFear"
         style="@style/Widget.AppCompat.SeekBar.Discrete"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:max="5"
         android:progress="1"
         app:layout_constraintBottom_toTopOf="@+id/textView20"
-        app:layout_constraintEnd_toEndOf="@+id/seekBar7"
+        app:layout_constraintEnd_toEndOf="@+id/seekBarSweat"
         app:layout_constraintStart_toStartOf="@+id/textView14"
-        app:layout_constraintTop_toTopOf="@+id/seekBar" />
+        app:layout_constraintTop_toTopOf="@+id/seekBarIntrThoughts" />
 
     <SeekBar
-        android:id="@+id/seekBar8"
+        android:id="@+id/seekBarStress"
         style="@style/Widget.AppCompat.SeekBar.Discrete"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -32,7 +32,7 @@
         app:layout_constraintBottom_toTopOf="@+id/textView28"
         app:layout_constraintEnd_toEndOf="@+id/textView28"
         app:layout_constraintStart_toStartOf="@+id/textView27"
-        app:layout_constraintTop_toTopOf="@+id/seekBar6" />
+        app:layout_constraintTop_toTopOf="@+id/seekBarSadness" />
 
     <TextView
         android:id="@+id/textView28"
@@ -55,17 +55,17 @@
         android:text="Nada"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/seekBar8" />
+        app:layout_constraintTop_toBottomOf="@+id/seekBarStress" />
 
     <SeekBar
-        android:id="@+id/seekBar7"
+        android:id="@+id/seekBarSweat"
         style="@style/Widget.AppCompat.SeekBar.Discrete"
         android:layout_width="0dp"
         android:layout_height="47dp"
         android:max="5"
         android:progress="1"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/seekBar8"
+        app:layout_constraintEnd_toEndOf="@+id/seekBarStress"
         app:layout_constraintStart_toStartOf="@+id/textView15"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -78,7 +78,7 @@
         android:text="Muito"
         android:textSize="12sp"
         app:layout_constraintEnd_toStartOf="@+id/textView27"
-        app:layout_constraintTop_toBottomOf="@+id/seekBar6" />
+        app:layout_constraintTop_toBottomOf="@+id/seekBarSadness" />
 
     <TextView
         android:id="@+id/textView25"
@@ -93,7 +93,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView18" />
 
     <SeekBar
-        android:id="@+id/seekBar6"
+        android:id="@+id/seekBarSadness"
         style="@style/Widget.AppCompat.SeekBar.Discrete"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -116,8 +116,8 @@
         android:layout_marginLeft="34dp"
         android:text="Nada"
         android:textSize="12sp"
-        app:layout_constraintStart_toEndOf="@+id/seekBar2"
-        app:layout_constraintTop_toBottomOf="@+id/seekBar7" />
+        app:layout_constraintStart_toEndOf="@+id/seekBarChest"
+        app:layout_constraintTop_toBottomOf="@+id/seekBarSweat" />
 
     <TextView
         android:id="@+id/textView23"
@@ -140,7 +140,7 @@
         android:text="Muito"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/seekBar7" />
+        app:layout_constraintTop_toBottomOf="@+id/seekBarSweat" />
 
     <TextView
         android:id="@+id/textView21"
@@ -151,7 +151,7 @@
         android:text="Muito"
         android:textSize="12sp"
         app:layout_constraintEnd_toStartOf="@+id/textView24"
-        app:layout_constraintTop_toBottomOf="@+id/seekBar2" />
+        app:layout_constraintTop_toBottomOf="@+id/seekBarChest" />
 
     <TextView
         android:id="@+id/textView20"
@@ -173,8 +173,8 @@
         android:layout_marginLeft="34dp"
         android:text="Nada"
         android:textSize="12sp"
-        app:layout_constraintStart_toEndOf="@+id/seekBar"
-        app:layout_constraintTop_toBottomOf="@+id/seekBar9" />
+        app:layout_constraintStart_toEndOf="@+id/seekBarIntrThoughts"
+        app:layout_constraintTop_toBottomOf="@+id/seekBarFear" />
 
     <TextView
         android:id="@+id/textView11"
@@ -194,7 +194,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <SeekBar
-        android:id="@+id/seekBar"
+        android:id="@+id/seekBarIntrThoughts"
         style="@style/Widget.AppCompat.SeekBar.Discrete"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -202,7 +202,7 @@
         android:max="5"
         android:progress="1"
         app:layout_constraintBottom_toTopOf="@+id/textView17"
-        app:layout_constraintEnd_toEndOf="@+id/seekBar2"
+        app:layout_constraintEnd_toEndOf="@+id/seekBarChest"
         app:layout_constraintStart_toStartOf="@+id/textView12"
         app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
@@ -218,14 +218,14 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <SeekBar
-        android:id="@+id/seekBar2"
+        android:id="@+id/seekBarChest"
         style="@style/Widget.AppCompat.SeekBar.Discrete"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:max="5"
         android:progress="1"
         app:layout_constraintBottom_toTopOf="@+id/textView23"
-        app:layout_constraintEnd_toEndOf="@+id/seekBar6"
+        app:layout_constraintEnd_toEndOf="@+id/seekBarSadness"
         app:layout_constraintStart_toStartOf="@+id/textView13"
         app:layout_constraintTop_toBottomOf="@+id/textView13" />
 
@@ -248,7 +248,7 @@
         android:layout_marginLeft="41dp"
         android:layout_marginBottom="5dp"
         android:text="Medo"
-        app:layout_constraintBottom_toTopOf="@+id/seekBar9"
+        app:layout_constraintBottom_toTopOf="@+id/seekBarFear"
         app:layout_constraintStart_toEndOf="@+id/textView12" />
 
     <TextView
@@ -259,8 +259,8 @@
         android:layout_marginLeft="45dp"
         android:layout_marginBottom="4dp"
         android:text="Suor"
-        app:layout_constraintBottom_toTopOf="@+id/seekBar7"
-        app:layout_constraintStart_toEndOf="@+id/seekBar2" />
+        app:layout_constraintBottom_toTopOf="@+id/seekBarSweat"
+        app:layout_constraintStart_toEndOf="@+id/seekBarChest" />
 
     <TextView
         android:id="@+id/textView16"
@@ -271,7 +271,7 @@
         android:text="Muito"
         android:textSize="12sp"
         app:layout_constraintEnd_toStartOf="@+id/textView19"
-        app:layout_constraintTop_toBottomOf="@+id/seekBar" />
+        app:layout_constraintTop_toBottomOf="@+id/seekBarIntrThoughts" />
 
     <TextView
         android:id="@+id/textView17"
@@ -291,7 +291,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="39dp"
         android:text="Tristeza"
-        app:layout_constraintStart_toStartOf="@+id/seekBar6"
+        app:layout_constraintStart_toStartOf="@+id/seekBarSadness"
         app:layout_constraintTop_toBottomOf="@+id/textView23" />
 
     <TextView
@@ -302,8 +302,8 @@
         android:layout_marginLeft="1dp"
         android:layout_marginBottom="4dp"
         android:text="Estresse"
-        app:layout_constraintBottom_toTopOf="@+id/seekBar8"
-        app:layout_constraintStart_toStartOf="@+id/seekBar8" />
+        app:layout_constraintBottom_toTopOf="@+id/seekBarStress"
+        app:layout_constraintStart_toStartOf="@+id/seekBarStress" />
 
     <Button
         android:id="@+id/button4"
