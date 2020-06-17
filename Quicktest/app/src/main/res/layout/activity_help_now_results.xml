@@ -20,7 +20,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textView45"
+                android:id="@+id/tituloResultado"
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
                 android:gravity="center"
@@ -29,16 +29,16 @@
                 android:textStyle="bold" />
 
             <ImageView
-                android:id="@+id/imageView2"
-                android:layout_width="160dp"
-                android:layout_height="160dp"
+                android:id="@+id/imagemResultado"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="20dp"
                 app:srcCompat="@drawable/health_help2" />
 
             <TextView
-                android:id="@+id/textView46"
+                android:id="@+id/textoResultado"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"

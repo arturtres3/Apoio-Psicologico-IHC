@@ -14,7 +14,7 @@
         android:max="5"
         android:progress="1"
         app:layout_constraintBottom_toTopOf="@+id/textView20"
-        app:layout_constraintEnd_toEndOf="@+id/seekBarSweat"
+        app:layout_constraintEnd_toEndOf="@+id/seekBarInsomnia"
         app:layout_constraintStart_toStartOf="@+id/textView14"
         app:layout_constraintTop_toTopOf="@+id/seekBarIntrThoughts" />
 
@@ -58,7 +58,7 @@
         app:layout_constraintTop_toBottomOf="@+id/seekBarStress" />
 
     <SeekBar
-        android:id="@+id/seekBarSweat"
+        android:id="@+id/seekBarInsomnia"
         style="@style/Widget.AppCompat.SeekBar.Discrete"
         android:layout_width="0dp"
         android:layout_height="47dp"
@@ -117,7 +117,7 @@
         android:text="Nada"
         android:textSize="12sp"
         app:layout_constraintStart_toEndOf="@+id/seekBarChest"
-        app:layout_constraintTop_toBottomOf="@+id/seekBarSweat" />
+        app:layout_constraintTop_toBottomOf="@+id/seekBarInsomnia" />
 
     <TextView
         android:id="@+id/textView23"
@@ -140,7 +140,7 @@
         android:text="Muito"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/seekBarSweat" />
+        app:layout_constraintTop_toBottomOf="@+id/seekBarInsomnia" />
 
     <TextView
         android:id="@+id/textView21"
@@ -258,8 +258,8 @@
         android:layout_marginStart="45dp"
         android:layout_marginLeft="45dp"
         android:layout_marginBottom="4dp"
-        android:text="Suor"
-        app:layout_constraintBottom_toTopOf="@+id/seekBarSweat"
+        android:text="Insônia"
+        app:layout_constraintBottom_toTopOf="@+id/seekBarInsomnia"
         app:layout_constraintStart_toEndOf="@+id/seekBarChest" />
 
     <TextView

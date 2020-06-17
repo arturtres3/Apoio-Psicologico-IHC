@@ -9,10 +9,32 @@
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
-    <string name="medo">"texto texto"</string>
     <string name="pensamentos_intrusivos_texto">"Procure aceitar pensamentos que te incomodam. Pergunte-se a si mesmo: você seria capaz de fazer isso que está pensando?
 
 Lembre-se que pensar nessas coisas não é o mesmo que fazê-las. Seus pensamentos não necessariamente refletem a realidade. Faça um exercício de meditação.
 
 Esse exercício poderá ajudar a clarear sua mente."</string>
+    <string name="medo_texto">"Mude a sua perspectiva sobre seu medo: Imagine-se como observador de alguém encarando o seu medo. Você está observando outra pessoa enfrentando o seu medo, enxergando a situação que te dá medo. Pense em como essa pessoa lidaria com a situação.
+Para facilitar essa tarefa, compartilhe seu medo com outras pessoas e converse sobre isso. Observe como elas reagem ao saber de seu medo. Assim, você pode aprender com a experiência de outras pessoas, e externalizar suas emoções."</string>
+    <string name="queima_texto">"Concentre-se em algum som que esteja por perto. Depois, vá se concentrando em outros sons, cada vez mais longe do que o som anterior.
+
+Combine isso com um exercício de respiração. Sugerimos este:
+1. Inspire pelo nariz, contando lentamente até quatro.
+2. Segure o ar nos pulmões, contando de novo até quatro.
+3. Expire lentamente pela boca, contando até quatro novamente.
+4. Mantenha-se sem ar por mais quatro segundos.
+Repita o processo. Quantas vezes precisar."</string>
+    <string name="insonia_texto">"Durante o dia, é importante praticar atividade física que te deixe realmente cansado de noite.
+Além disso, evitar cochilos durante o dia também ajuda.
+Por agora, escute essa música : https://www.youtube.com/watch?v=1ZYbU82GVz4
+Enquanto escuta a música, feche os olhos e concentre-se somente na música, nada mais."</string>
+    <string name="tristeza_texto">"Lembre-se de sua própria importância. Você é único no mundo, e há pessoas que te amam. Você é importante!
+Repita isso para si mesmo 5 vezes.
+Escreva em um papel, ou no próprio celular em algum bloco de notas, o que está te causando essa sensação. Assim, você pode colocar isso para fora.
+Confira aqui, neste link, como o ser humano pode ser incrível: https://www.youtube.com/channel/UCg8VTeeN4BglqmI1_CBlABg"</string>
+    <string name="estresse_texto">"Coloque os problemas de lado, só um pouco. Feche os olhos e respire fundo. Inspire o máximo de ar que puder, e expire lentamente. Concentre-se só na sua respiração, nada mais.
+Enquanto faz esse exercício, escute esta música : https://www.youtube.com/watch?v=UfcAVejslrU"</string>
+
+
+
 </resources>

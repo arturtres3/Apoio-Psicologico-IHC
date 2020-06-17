@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.SeekBar;
-import android.widget.Toast;
 
 public class HelpNowFirstPage extends AppCompatActivity {
 
@@ -33,8 +32,8 @@ public class HelpNowFirstPage extends AppCompatActivity {
             }
 
             public void onStopTrackingTouch(SeekBar seekBar) {
-                Toast.makeText(HelpNowFirstPage.this, "Seek bar progress is :" + progressChangedValue[0],
-                        Toast.LENGTH_SHORT).show();
+                /*Toast.makeText(HelpNowFirstPage.this, "Seek bar progress is :" + progressChangedValue[0],
+                        Toast.LENGTH_SHORT).show();*/
 
             }
         });
@@ -52,8 +51,8 @@ public class HelpNowFirstPage extends AppCompatActivity {
             }
 
             public void onStopTrackingTouch(SeekBar seekBar) {
-                Toast.makeText(HelpNowFirstPage.this, "Seek bar progress is :" + progressChangedValue[1],
-                        Toast.LENGTH_SHORT).show();
+                /*Toast.makeText(HelpNowFirstPage.this, "Seek bar progress is :" + progressChangedValue[1],
+                        Toast.LENGTH_SHORT).show();*/
 
             }
         });
@@ -72,14 +71,14 @@ public class HelpNowFirstPage extends AppCompatActivity {
             }
 
             public void onStopTrackingTouch(SeekBar seekBar) {
-                Toast.makeText(HelpNowFirstPage.this, "Seek bar progress is :" + progressChangedValue[2],
-                        Toast.LENGTH_SHORT).show();
+                /*Toast.makeText(HelpNowFirstPage.this, "Seek bar progress is :" + progressChangedValue[2],
+                        Toast.LENGTH_SHORT).show();*/
 
             }
         });
     }
 
-    private void pickValueSweatSeekBar() {
+    private void pickValueInsomniaSeekBar() {
         sweatSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
 
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
@@ -91,8 +90,8 @@ public class HelpNowFirstPage extends AppCompatActivity {
             }
 
             public void onStopTrackingTouch(SeekBar seekBar) {
-                Toast.makeText(HelpNowFirstPage.this, "Seek bar progress is :" + progressChangedValue[3],
-                        Toast.LENGTH_SHORT).show();
+                /*Toast.makeText(HelpNowFirstPage.this, "Seek bar progress is :" + progressChangedValue[3],
+                        Toast.LENGTH_SHORT).show();*/
 
             }
         });
@@ -111,8 +110,8 @@ public class HelpNowFirstPage extends AppCompatActivity {
             }
 
             public void onStopTrackingTouch(SeekBar seekBar) {
-                Toast.makeText(HelpNowFirstPage.this, "Seek bar progress is :" + progressChangedValue[4],
-                        Toast.LENGTH_SHORT).show();
+                /*Toast.makeText(HelpNowFirstPage.this, "Seek bar progress is :" + progressChangedValue[4],
+                        Toast.LENGTH_SHORT).show();*/
 
             }
         });
@@ -130,8 +129,8 @@ public class HelpNowFirstPage extends AppCompatActivity {
             }
 
             public void onStopTrackingTouch(SeekBar seekBar) {
-                Toast.makeText(HelpNowFirstPage.this, "Seek bar progress is :" + progressChangedValue[5],
-                        Toast.LENGTH_SHORT).show();
+                /*Toast.makeText(HelpNowFirstPage.this, "Seek bar progress is :" + progressChangedValue[5],
+                        Toast.LENGTH_SHORT).show();*/
 
             }
         });
@@ -145,7 +144,7 @@ public class HelpNowFirstPage extends AppCompatActivity {
         intrusiveThoughtsSeekBar = (SeekBar) findViewById(R.id.seekBarIntrThoughts);
         fearSeekBar = (SeekBar) findViewById(R.id.seekBarFear);
         chestSeekBar = (SeekBar) findViewById(R.id.seekBarChest);
-        sweatSeekBar = (SeekBar) findViewById(R.id.seekBarSweat);
+        sweatSeekBar = (SeekBar) findViewById(R.id.seekBarInsomnia);
         sadnessSeekBar = (SeekBar) findViewById(R.id.seekBarSadness);
         stressSeekBar = (SeekBar) findViewById(R.id.seekBarStress);
 
@@ -155,7 +154,7 @@ public class HelpNowFirstPage extends AppCompatActivity {
         pickValueIntrThoughtsSeekBar();
         pickValueFearSeekBar();
         pickValueChestSeekBar();
-        pickValueSweatSeekBar();
+        pickValueInsomniaSeekBar();
         pickValueSadnessSeekBar();
         pickValueStressSeekBar();
     }
@@ -164,6 +163,13 @@ public class HelpNowFirstPage extends AppCompatActivity {
         Intent display = new Intent(this, HelpNowResults.class);
 
         display.putExtra("values", progressChangedValue);
+        display.putExtra("pensamentos", progressChangedValue[0]);
+        display.putExtra("medo", progressChangedValue[1]);
+        display.putExtra("queima", progressChangedValue[2]);
+        display.putExtra("insonia", progressChangedValue[3]);
+        display.putExtra("tristeza", progressChangedValue[4]);
+        display.putExtra("estresse", progressChangedValue[5]);
+
 
         startActivity(display);
 
