@@ -16,8 +16,8 @@ public class HelpNowResults extends AppCompatActivity {
 
         Bundle extras = getIntent().getExtras();
         int[] resultados = extras.getIntArray("values");
-        Toast.makeText(this,   "" + resultados[0] + resultados[1] + resultados[2]+ resultados[3]+ resultados[4] + resultados[5],
-                Toast.LENGTH_LONG).show();
+        /*Toast.makeText(this,   "" + resultados[0] + resultados[1] + resultados[2]+ resultados[3]+ resultados[4] + resultados[5],
+                Toast.LENGTH_LONG).show();*/
 
     }
 }
