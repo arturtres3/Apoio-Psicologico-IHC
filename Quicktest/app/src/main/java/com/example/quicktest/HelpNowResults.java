@@ -2,8 +2,10 @@ package com.example.quicktest;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -12,24 +14,28 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class HelpNowResults extends AppCompatActivity {
-
+    int contaPaginas;
+    List mostrar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_help_now_results);
 
+        final Button button = findViewById(R.id.button8);
         Bundle extras = getIntent().getExtras();
         int[] resultados;
         resultados = extras.getIntArray("values");
 
-        /*Toast.makeText(this,   "" + resultados[0] + resultados[1] + resultados[2]+ resultados[3]+ resultados[4] + resultados[5],
-                Toast.LENGTH_LONG).show();*/
-
-        List mostrar = criaMostrar(resultados);
+        mostrar = criaMostrar(resultados);
 
         displayInfo((Integer) mostrar.get(0));
 
+        contaPaginas = 1;
+
+        if(contaPaginas == mostrar.size()){
+            button.setText("Voltar");
+        }
     }
 
     protected void displayInfo (int code) {
@@ -90,10 +96,7 @@ public class HelpNowResults extends AppCompatActivity {
 
     }
 
-
-
-    public int getIndexOfLargest( int[] array )
-    {
+    public int getIndexOfLargest( int[] array ) {
         if ( array == null || array.length == 0 ) return -1; // null or empty
 
         int largest = 0;
@@ -104,6 +107,7 @@ public class HelpNowResults extends AppCompatActivity {
         return largest; // position of the first largest found
     }
 
+    //cria lista de assuntos para mostrar para o usuário
     public List criaMostrar(int[] resultados){
         int i;
         List mostrar = new ArrayList();
@@ -115,15 +119,23 @@ public class HelpNowResults extends AppCompatActivity {
 
         if(mostrar.size() == 0){
             mostrar.add(getIndexOfLargest(resultados));
-           // mostrar.add(1);
         }
 
         return mostrar;
     }
 
-
-
-
-
+    public void proxResultado(android.view.View view){
+        final Button button = findViewById(R.id.button8);
+        if(contaPaginas < mostrar.size()){
+            displayInfo((Integer) mostrar.get(contaPaginas));
+            contaPaginas++;
+            if(contaPaginas == mostrar.size()){
+                button.setText("Voltar");
+            }
+        }else{
+            Intent goBack = new Intent(this, MainActivity.class);
+            startActivity(goBack);
+        }
+    }
 
 }
