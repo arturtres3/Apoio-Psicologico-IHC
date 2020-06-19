@@ -34,7 +34,7 @@ public class HelpNowResults extends AppCompatActivity {
         contaPaginas = 1;
 
         if(contaPaginas == mostrar.size()){
-            button.setText("Voltar");
+            button.setText(getResources().getString(R.string.back));
         }
     }
 
@@ -43,55 +43,40 @@ public class HelpNowResults extends AppCompatActivity {
         TextView texto = (TextView) findViewById(R.id.textoResultado);
         ImageView imagem = (ImageView) findViewById(R.id.imagemResultado);
 
-        //Drawable d = getResources().getDrawable(android.R.drawable.sunrise_fear);
-
         switch(code)
         {
             case 0:
-                String mystring = getResources().getString(R.string.pensamentos_intrusivos_texto);
-                titulo.setText("Pensamentos Intrusivos");
-                texto.setText(mystring);
-                //imagem.setImageDrawable();
+                titulo.setText(getResources().getString(R.string.pensamentos_intrusivos_titulo));
+                texto.setText(getResources().getString(R.string.pensamentos_intrusivos_texto));
+                //imagem.setImageDrawable(); //sem imagem por enquanto
                 break;
             case 1:
-                Drawable medo = this.getResources().getDrawable(R.drawable.sunrise_fear);
-                String mystring1 = getResources().getString(R.string.medo_texto);
-                titulo.setText("Medo");
-                texto.setText(mystring1);
-                imagem.setImageDrawable(medo);
+                titulo.setText(getResources().getString(R.string.medo_titulo));
+                texto.setText(getResources().getString(R.string.medo_texto));
+                imagem.setImageDrawable(getResources().getDrawable(R.drawable.sunrise_fear));
                 break;
             case 2:
-                Drawable folha = this.getResources().getDrawable(R.drawable.folha_chest);
-                String mystring2 = getResources().getString(R.string.queima_texto);
-                titulo.setText("Queimação no Peito");
-                texto.setText(mystring2);
-                imagem.setImageDrawable(folha);
+                titulo.setText(getResources().getString(R.string.queima_titulo));
+                texto.setText(getResources().getString(R.string.queima_texto));
+                imagem.setImageDrawable(getResources().getDrawable(R.drawable.folha_chest));
                 break;
             case 3:
-                Drawable paradise = this.getResources().getDrawable(R.drawable.paradise_insomnia);
-                String mystring3 = getResources().getString(R.string.insonia_texto);
-                titulo.setText("Insônia");
-                texto.setText(mystring3);
-                imagem.setImageDrawable(paradise);
+                titulo.setText(getResources().getString(R.string.insonia_titulo));
+                texto.setText(getResources().getString(R.string.insonia_texto));
+                imagem.setImageDrawable(getResources().getDrawable(R.drawable.paradise_insomnia));
                 break;
             case 4:
-                Drawable seal = this.getResources().getDrawable(R.drawable.seal_sadness);
-                String mystring4 = getResources().getString(R.string.tristeza_texto);
-                titulo.setText("Tristeza");
-                texto.setText(mystring4);
-                imagem.setImageDrawable(seal);
+                titulo.setText(getResources().getString(R.string.tristeza_titulo));
+                texto.setText(getResources().getString(R.string.tristeza_texto));
+                imagem.setImageDrawable(getResources().getDrawable(R.drawable.seal_sadness));
                 break;
             case 5:
-                Drawable cat = this.getResources().getDrawable(R.drawable.miau_stress);
-                String mystring5 = getResources().getString(R.string.estresse_texto);
-                titulo.setText("Estresse");
-                texto.setText(mystring5);
-                imagem.setImageDrawable(cat);
+                titulo.setText(getResources().getString(R.string.estresse_titulo));
+                texto.setText(getResources().getString(R.string.estresse_texto));
+                imagem.setImageDrawable(getResources().getDrawable(R.drawable.miau_stress));
                 break;
-
-
             default:
-
+                Toast.makeText(this, "Ocorreu um Erro", Toast.LENGTH_SHORT).show();
         }
 
     }

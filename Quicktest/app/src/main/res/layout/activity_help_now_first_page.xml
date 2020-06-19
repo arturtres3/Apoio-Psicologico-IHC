@@ -40,7 +40,8 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
-        android:text="Muito"
+        android:text="@string/muito"
+        android:textColor="#000000"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="@+id/textView26"
         app:layout_constraintEnd_toEndOf="parent"
@@ -52,7 +53,8 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="158dp"
         android:layout_marginRight="158dp"
-        android:text="Nada"
+        android:text="@string/nada"
+        android:textColor="#000000"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/seekBarStress" />
@@ -75,7 +77,8 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="30dp"
         android:layout_marginRight="30dp"
-        android:text="Muito"
+        android:text="@string/muito"
+        android:textColor="#000000"
         android:textSize="12sp"
         app:layout_constraintEnd_toStartOf="@+id/textView27"
         app:layout_constraintTop_toBottomOf="@+id/seekBarSadness" />
@@ -87,7 +90,8 @@
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
         android:layout_marginTop="47dp"
-        android:text="Nada"
+        android:text="@string/nada"
+        android:textColor="#000000"
         android:textSize="12sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView18" />
@@ -114,7 +118,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="34dp"
         android:layout_marginLeft="34dp"
-        android:text="Nada"
+        android:text="@string/nada"
+        android:textColor="#000000"
         android:textSize="12sp"
         app:layout_constraintStart_toEndOf="@+id/seekBarChest"
         app:layout_constraintTop_toBottomOf="@+id/seekBarInsomnia" />
@@ -125,7 +130,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
-        android:text="Nada"
+        android:text="@string/nada"
+        android:textColor="#000000"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="@+id/textView24"
         app:layout_constraintStart_toStartOf="parent"
@@ -137,7 +143,8 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
-        android:text="Muito"
+        android:text="@string/muito"
+        android:textColor="#000000"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/seekBarInsomnia" />
@@ -148,7 +155,8 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="30dp"
         android:layout_marginRight="30dp"
-        android:text="Muito"
+        android:text="@string/muito"
+        android:textColor="#000000"
         android:textSize="12sp"
         app:layout_constraintEnd_toStartOf="@+id/textView24"
         app:layout_constraintTop_toBottomOf="@+id/seekBarChest" />
@@ -159,7 +167,8 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
-        android:text="Muito"
+        android:text="@string/muito"
+        android:textColor="#000000"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="@+id/textView16"
         app:layout_constraintEnd_toEndOf="parent"
@@ -171,7 +180,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="34dp"
         android:layout_marginLeft="34dp"
-        android:text="Nada"
+        android:text="@string/nada"
+        android:textColor="#000000"
         android:textSize="12sp"
         app:layout_constraintStart_toEndOf="@+id/seekBarIntrThoughts"
         app:layout_constraintTop_toBottomOf="@+id/seekBarFear" />
@@ -185,7 +195,7 @@
         android:layout_marginTop="56dp"
         android:layout_marginEnd="61dp"
         android:layout_marginRight="61dp"
-        android:text="O que você está sentindo?"
+        android:text="@string/quick_test_title"
         android:textColor="@color/colorPrimary"
         android:textSelectHandle="@color/design_default_color_primary"
         android:textSize="24sp"
@@ -213,7 +223,8 @@
         android:layout_marginStart="40dp"
         android:layout_marginLeft="40dp"
         android:layout_marginBottom="52dp"
-        android:text="Pensamentos intrusivos"
+        android:text="@string/pensamentos_intrusivos_titulo"
+        android:textColor="#000000"
         app:layout_constraintBottom_toTopOf="@+id/textView17"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -236,7 +247,8 @@
         android:layout_marginStart="40dp"
         android:layout_marginLeft="40dp"
         android:layout_marginBottom="47dp"
-        android:text="Queimação no peito"
+        android:text="@string/queima_titulo"
+        android:textColor="#000000"
         app:layout_constraintBottom_toTopOf="@+id/textView23"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -247,7 +259,8 @@
         android:layout_marginStart="41dp"
         android:layout_marginLeft="41dp"
         android:layout_marginBottom="5dp"
-        android:text="Medo"
+        android:text="@string/medo_titulo"
+        android:textColor="#000000"
         app:layout_constraintBottom_toTopOf="@+id/seekBarFear"
         app:layout_constraintStart_toEndOf="@+id/textView12" />
 
@@ -258,7 +271,8 @@
         android:layout_marginStart="45dp"
         android:layout_marginLeft="45dp"
         android:layout_marginBottom="4dp"
-        android:text="Insônia"
+        android:text="@string/insonia_titulo"
+        android:textColor="#000000"
         app:layout_constraintBottom_toTopOf="@+id/seekBarInsomnia"
         app:layout_constraintStart_toEndOf="@+id/seekBarChest" />
 
@@ -268,7 +282,8 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="30dp"
         android:layout_marginRight="30dp"
-        android:text="Muito"
+        android:text="@string/muito"
+        android:textColor="#000000"
         android:textSize="12sp"
         app:layout_constraintEnd_toStartOf="@+id/textView19"
         app:layout_constraintTop_toBottomOf="@+id/seekBarIntrThoughts" />
@@ -280,7 +295,8 @@
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
         android:layout_marginBottom="71dp"
-        android:text="Nada"
+        android:text="@string/nada"
+        android:textColor="#000000"
         android:textSize="12sp"
         app:layout_constraintBottom_toTopOf="@+id/textView13"
         app:layout_constraintStart_toStartOf="parent" />
@@ -290,7 +306,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="39dp"
-        android:text="Tristeza"
+        android:text="@string/tristeza_titulo"
+        android:textColor="#000000"
         app:layout_constraintStart_toStartOf="@+id/seekBarSadness"
         app:layout_constraintTop_toBottomOf="@+id/textView23" />
 
@@ -301,7 +318,8 @@
         android:layout_marginStart="1dp"
         android:layout_marginLeft="1dp"
         android:layout_marginBottom="4dp"
-        android:text="Estresse"
+        android:text="@string/estresse_titulo"
+        android:textColor="#000000"
         app:layout_constraintBottom_toTopOf="@+id/seekBarStress"
         app:layout_constraintStart_toStartOf="@+id/seekBarStress" />
 
@@ -313,7 +331,7 @@
         android:layout_marginLeft="7dp"
         android:layout_marginTop="57dp"
         android:onClick="next"
-        android:text="Próximo"
+        android:text="@string/next"
         app:layout_constraintStart_toStartOf="@+id/textView26"
         app:layout_constraintTop_toBottomOf="@+id/textView27" />
 

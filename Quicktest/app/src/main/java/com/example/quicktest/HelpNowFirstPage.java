@@ -32,8 +32,6 @@ public class HelpNowFirstPage extends AppCompatActivity {
             }
 
             public void onStopTrackingTouch(SeekBar seekBar) {
-                /*Toast.makeText(HelpNowFirstPage.this, "Seek bar progress is :" + progressChangedValue[0],
-                        Toast.LENGTH_SHORT).show();*/
 
             }
         });
@@ -51,8 +49,6 @@ public class HelpNowFirstPage extends AppCompatActivity {
             }
 
             public void onStopTrackingTouch(SeekBar seekBar) {
-                /*Toast.makeText(HelpNowFirstPage.this, "Seek bar progress is :" + progressChangedValue[1],
-                        Toast.LENGTH_SHORT).show();*/
 
             }
         });
@@ -71,8 +67,6 @@ public class HelpNowFirstPage extends AppCompatActivity {
             }
 
             public void onStopTrackingTouch(SeekBar seekBar) {
-                /*Toast.makeText(HelpNowFirstPage.this, "Seek bar progress is :" + progressChangedValue[2],
-                        Toast.LENGTH_SHORT).show();*/
 
             }
         });
@@ -90,8 +84,6 @@ public class HelpNowFirstPage extends AppCompatActivity {
             }
 
             public void onStopTrackingTouch(SeekBar seekBar) {
-                /*Toast.makeText(HelpNowFirstPage.this, "Seek bar progress is :" + progressChangedValue[3],
-                        Toast.LENGTH_SHORT).show();*/
 
             }
         });
@@ -110,8 +102,6 @@ public class HelpNowFirstPage extends AppCompatActivity {
             }
 
             public void onStopTrackingTouch(SeekBar seekBar) {
-                /*Toast.makeText(HelpNowFirstPage.this, "Seek bar progress is :" + progressChangedValue[4],
-                        Toast.LENGTH_SHORT).show();*/
 
             }
         });
@@ -129,8 +119,6 @@ public class HelpNowFirstPage extends AppCompatActivity {
             }
 
             public void onStopTrackingTouch(SeekBar seekBar) {
-                /*Toast.makeText(HelpNowFirstPage.this, "Seek bar progress is :" + progressChangedValue[5],
-                        Toast.LENGTH_SHORT).show();*/
 
             }
         });
@@ -163,13 +151,6 @@ public class HelpNowFirstPage extends AppCompatActivity {
         Intent display = new Intent(this, HelpNowResults.class);
 
         display.putExtra("values", progressChangedValue);
-        display.putExtra("pensamentos", progressChangedValue[0]);
-        display.putExtra("medo", progressChangedValue[1]);
-        display.putExtra("queima", progressChangedValue[2]);
-        display.putExtra("insonia", progressChangedValue[3]);
-        display.putExtra("tristeza", progressChangedValue[4]);
-        display.putExtra("estresse", progressChangedValue[5]);
-
 
         startActivity(display);
 
