@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Quicktest</string>
+    <string name="app_name">PSI Help</string>
     <string name="title_activity_login">Login</string>
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>

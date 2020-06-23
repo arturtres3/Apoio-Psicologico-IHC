@@ -25,4 +25,10 @@ public class MainActivity extends AppCompatActivity {
 
         startActivity(helpNow);
     }
+
+    public void startEditProfile(android.view.View view){
+        Intent editProfile = new Intent(this, EditProfile.class);
+
+        startActivity(editProfile);
+    }
 }
