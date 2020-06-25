@@ -45,6 +45,6 @@ Enquanto faz esse exercício, escute esta música : https://www.youtube.com/watc
     <string name="estresse_titulo">Estresse</string>
     <string name="next">Próximo</string>
     <string name="back">Voltar</string>
-
-
+    <string name="send">salvar</string>
+    <string name="hint_coisas">O que te afeta?</string>
 </resources>

@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -36,6 +38,8 @@ public class HelpNowResults extends AppCompatActivity {
         if(contaPaginas == mostrar.size()){
             button.setText(getResources().getString(R.string.back));
         }
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
     protected void displayInfo (int code) {
@@ -121,6 +125,21 @@ public class HelpNowResults extends AppCompatActivity {
             Intent goBack = new Intent(this, MainActivity.class);
             startActivity(goBack);
         }
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    public boolean onCreateOptionsMenu(Menu menu) {
+        return true;
     }
 
 }

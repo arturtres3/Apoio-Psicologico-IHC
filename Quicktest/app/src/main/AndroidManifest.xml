@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".EditProfile"></activity>
+        <activity android:name=".coisas_que_me_afetam"></activity>
+        <activity android:name=".EditProfile" />
         <activity android:name=".HelpNowResults" />
         <activity android:name=".HelpNowFirstPage" />
         <activity

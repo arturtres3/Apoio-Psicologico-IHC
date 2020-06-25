@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.SeekBar;
 
@@ -145,6 +147,8 @@ public class HelpNowFirstPage extends AppCompatActivity {
         pickValueInsomniaSeekBar();
         pickValueSadnessSeekBar();
         pickValueStressSeekBar();
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
     public void next (android.view.View view){
@@ -154,6 +158,21 @@ public class HelpNowFirstPage extends AppCompatActivity {
 
         startActivity(display);
 
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    public boolean onCreateOptionsMenu(Menu menu) {
+        return true;
     }
 
 }

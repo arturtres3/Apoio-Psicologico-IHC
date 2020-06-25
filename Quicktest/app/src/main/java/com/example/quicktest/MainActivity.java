@@ -31,4 +31,10 @@ public class MainActivity extends AppCompatActivity {
 
         startActivity(editProfile);
     }
+
+    public void startCoisasQueMeAfetam(android.view.View view){
+        Intent coisas = new Intent(this, coisas_que_me_afetam.class);
+
+        startActivity(coisas);
+    }
 }

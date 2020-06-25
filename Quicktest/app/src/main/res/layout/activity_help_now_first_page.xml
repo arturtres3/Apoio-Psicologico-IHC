@@ -330,6 +330,7 @@
         android:layout_marginStart="7dp"
         android:layout_marginLeft="7dp"
         android:layout_marginTop="57dp"
+        android:background="@color/colorAccent"
         android:onClick="next"
         android:text="@string/next"
         app:layout_constraintStart_toStartOf="@+id/textView26"
