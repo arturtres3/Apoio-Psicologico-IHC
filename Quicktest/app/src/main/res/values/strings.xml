@@ -53,4 +53,5 @@ Enquanto faz esse exercício, escute esta música : https://www.youtube.com/watc
     <string name="no">Não, espere!</string>
     <string name="profile_noproblem">Tudo certo! Clique OK para voltar para a tela inicial.</string>
     <string name="are_you_sure">Você tem certeza que quer cancelar? Tudo o que você inseriu será perdido.</string>
+    <string name="age_empty_message">Você não colocou nenhuma idade.</string>
 </resources>

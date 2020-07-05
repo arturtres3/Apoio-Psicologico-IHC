@@ -1,5 +1,6 @@
 package com.example.quicktest;
 
+import android.widget.RadioGroup;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
 
@@ -8,11 +9,13 @@ import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -76,7 +79,11 @@ public class EditProfile extends AppCompatActivity {
         builderAgeError.setMessage(message)
                 .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-                        if(valid) backToMainPage(view);
+                        if(valid){
+                            sendText(view);
+                            checkRadioButtonsWork(view);
+                            //backToMainPage(view);
+                        }
                     }
                 });
 
@@ -103,16 +110,23 @@ public class EditProfile extends AppCompatActivity {
         final int MAXIMUM_AGE = 120;
 
         final EditText userAgeText = (EditText) findViewById(R.id.ageText);
-        int userAge = Integer.parseInt(userAgeText.getText().toString());
 
-        if (userAge < MINIMUM_AGE || userAge > MAXIMUM_AGE){
-            onCreateDialog_OK(view, getString(R.string.age_error_message), false);
+        if (userAgeText.getText().toString().equals("")){
+            onCreateDialog_OK(view, getString(R.string.age_empty_message), false);
         }
         else{
-            //chamar método para armazenar os dados do perfil aqui
-            onCreateDialog_OK(view, getString(R.string.profile_noproblem), true);
+            int userAge = Integer.parseInt(userAgeText.getText().toString());
+
+            if (userAge < MINIMUM_AGE || userAge > MAXIMUM_AGE){
+                onCreateDialog_OK(view, getString(R.string.age_error_message), false);
+            }
+            else{
+                sendText(view);
+                onCreateDialog_OK(view, getString(R.string.profile_noproblem), true);
+            }
         }
     }
+
 
     public void onCreateDialog_Cancel(final View view) {
         AlertDialog.Builder cancelBuilder = new AlertDialog.Builder(EditProfile.this);
@@ -129,6 +143,21 @@ public class EditProfile extends AppCompatActivity {
         final Dialog cancel = cancelBuilder.create();
         cancel.show();
     }
+
+
+    public void sendText(android.view.View view){
+        EditText input = (EditText) findViewById(R.id.ageText);
+        String entrada = input.getText().toString();
+        if(!entrada.equals("")) {
+            PreferenceManager.getDefaultSharedPreferences(this).edit().putString("IDADE", entrada).apply();
+            //String idade = PreferenceManager.getDefaultSharedPreferences(this).getString("IDADE", "NOT_FOUND");
+            //Toast.makeText(this, idade, Toast.LENGTH_SHORT).show();
+            input.setText("");
+        }
+    }
+
+
+
 }
 
 
