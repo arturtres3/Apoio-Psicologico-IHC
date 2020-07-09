@@ -1,7 +1,9 @@
 package com.example.quicktest;
 
+import android.annotation.SuppressLint;
 import android.widget.RadioGroup;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.ViewCompat;
 import androidx.fragment.app.DialogFragment;
 
 import android.app.AlertDialog;
@@ -23,6 +25,8 @@ import com.google.android.material.snackbar.BaseTransientBottomBar;
 import com.google.android.material.snackbar.Snackbar;
 
 public class EditProfile extends AppCompatActivity {
+
+    final int HOURS_ANSWER_ID = 100;
 
     public void ageFieldDigitsOnly(){
         final EditText age = (EditText) findViewById(R.id.ageText);
@@ -53,14 +57,17 @@ public class EditProfile extends AppCompatActivity {
         return true;
     }
 
+
     public void howManyHoursWork(View view){
         final float HOWMANYHOURS_TEXTSIZE = 20;
+
         final LinearLayout linearLayout = (LinearLayout) findViewById(R.id.linear_layout);
         TextView howManyHoursText = new TextView(EditProfile.this);
         howManyHoursText.setText("Tudo bem, mas quantas horas por dia de trabalho?");
         howManyHoursText.setTextSize(HOWMANYHOURS_TEXTSIZE);
 
         final EditText howManyHoursAnswer = new EditText(EditProfile.this);
+        howManyHoursAnswer.setId(HOURS_ANSWER_ID);
         howManyHoursAnswer.setHint("Insira apenas um número de horas(ex: 8)");
         howManyHoursAnswer.setTextSize(14);
 
@@ -74,15 +81,16 @@ public class EditProfile extends AppCompatActivity {
     }
 
 
+
+
     public void onCreateDialog_OK(final View view, String message, final Boolean valid) {
         final AlertDialog.Builder builderAgeError = new AlertDialog.Builder(EditProfile.this);
         builderAgeError.setMessage(message)
                 .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         if(valid){
-                            sendText(view);
-                            checkRadioButtonsWork(view);
-                            //backToMainPage(view);
+                            saveInformation(view);
+                            backToMainPage(view);
                         }
                     }
                 });
@@ -121,7 +129,6 @@ public class EditProfile extends AppCompatActivity {
                 onCreateDialog_OK(view, getString(R.string.age_error_message), false);
             }
             else{
-                sendText(view);
                 onCreateDialog_OK(view, getString(R.string.profile_noproblem), true);
             }
         }
@@ -145,15 +152,27 @@ public class EditProfile extends AppCompatActivity {
     }
 
 
-    public void sendText(android.view.View view){
+    public void saveInformation(android.view.View view){
         EditText input = (EditText) findViewById(R.id.ageText);
         String entrada = input.getText().toString();
-        if(!entrada.equals("")) {
-            PreferenceManager.getDefaultSharedPreferences(this).edit().putString("IDADE", entrada).apply();
-            //String idade = PreferenceManager.getDefaultSharedPreferences(this).getString("IDADE", "NOT_FOUND");
-            //Toast.makeText(this, idade, Toast.LENGTH_SHORT).show();
-            input.setText("");
+        PreferenceManager.getDefaultSharedPreferences(this).edit().putString("IDADE", entrada).apply();
+        input.setText("");
+        //    linhas comentadas abaixo feitas para teste
+        //String idade = PreferenceManager.getDefaultSharedPreferences(this).getString("IDADE", "NOT_FOUND");
+        //Toast.makeText(this, idade, Toast.LENGTH_SHORT).show();
+
+
+        if(findViewById(HOURS_ANSWER_ID) != null){
+            EditText hours_answer = (EditText) findViewById(HOURS_ANSWER_ID);
+            String hours = hours_answer.getText().toString();
+            PreferenceManager.getDefaultSharedPreferences(this).edit().putString("HORAS_TRABALHO", hours).apply();
+            hours_answer.setText("");
+            //    linhas comentadas abaixo feitas para teste
+            //String horas = PreferenceManager.getDefaultSharedPreferences(this).getString("HORAS_TRABALHO", "NOT_FOUND");
+            //Toast.makeText(this, horas, Toast.LENGTH_SHORT).show();
         }
+
+
     }
 
 
