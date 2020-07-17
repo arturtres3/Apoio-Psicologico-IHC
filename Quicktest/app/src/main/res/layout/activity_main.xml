@@ -181,6 +181,7 @@
         android:layout_marginRight="73dp"
         android:layout_marginBottom="1dp"
         android:background="@drawable/health_diary"
+        android:onClick="startMelhoreSeuDia"
         app:layout_constraintBottom_toTopOf="@+id/textView10"
         app:layout_constraintEnd_toEndOf="parent" />
 

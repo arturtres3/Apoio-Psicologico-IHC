@@ -39,4 +39,10 @@ public class MainActivity extends AppCompatActivity {
 
         startActivity(coisas);
     }
+
+    public void startMelhoreSeuDia(android.view.View view){
+        Intent improveYourDay = new Intent(this, ImproveYourDay.class);
+
+        startActivity(improveYourDay);
+    }
 }
