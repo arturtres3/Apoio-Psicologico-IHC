@@ -243,6 +243,8 @@ public class EditProfile extends AppCompatActivity {
         RadioGroup conditionGroup = (RadioGroup) findViewById(R.id.conditionRadioGroup);
         int selectedConditionId = conditionGroup.getCheckedRadioButtonId();
         RadioButton selectedCondition = (RadioButton)findViewById(selectedConditionId);
+        String selectedCondition_Text = selectedCondition.getText().toString();
+        PreferenceManager.getDefaultSharedPreferences(this).edit().putString("HEALTH_CONDITION", selectedCondition_Text).apply();
         //Toast.makeText(getApplicationContext(), selectedCondition.getText().toString()+" is selected", Toast.LENGTH_SHORT).show();
     }
 

@@ -50,4 +50,16 @@ public class ImproveYourDay extends AppCompatActivity {
         return PreferenceManager.getDefaultSharedPreferences(this).getString("NOME", "NOT_FOUND");
     }
 
+    public String getUserAge(){
+        return PreferenceManager.getDefaultSharedPreferences(this).getString("IDADE", "NOT_FOUND");
+    }
+
+    public String getUserHealthCondition(){
+        return PreferenceManager.getDefaultSharedPreferences(this).getString("HEALTH_CONDITION", "NOT_FOUND");
+    }
+
+    public String getUserHoursOfWork(){
+        return PreferenceManager.getDefaultSharedPreferences(this).getString("HORAS_TRABALHO", "NOT_FOUND");
+    }
+
 }
