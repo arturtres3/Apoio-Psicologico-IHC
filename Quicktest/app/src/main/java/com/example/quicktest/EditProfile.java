@@ -74,6 +74,7 @@ public class EditProfile extends AppCompatActivity {
         TextView howManyHoursText = new TextView(EditProfile.this);
         howManyHoursText.setText("Tudo bem, mas quantas horas por dia de trabalho?");
         howManyHoursText.setTextSize(HOWMANYHOURS_TEXTSIZE);
+        howManyHoursText.setTextColor(getResources().getColor(R.color.colorPrimary));
 
         final EditText howManyHoursAnswer = new EditText(EditProfile.this);
         howManyHoursAnswer.setId(HOURS_ANSWER_ID);
