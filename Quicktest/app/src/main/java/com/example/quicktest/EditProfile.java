@@ -32,6 +32,7 @@ import com.google.android.material.snackbar.Snackbar;
 public class EditProfile extends AppCompatActivity {
 
     final int HOURS_ANSWER_ID = 100;
+    boolean howManyHoursOpen = false;
 
     public void ageFieldDigitsOnly(){
         final EditText age = (EditText) findViewById(R.id.ageText);
@@ -43,51 +44,42 @@ public class EditProfile extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_profile);
 
-        //testing();
-
-
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         ageFieldDigitsOnly();
 
+        setValuesFromSharedPreferences();
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                finish();
-                return true;
-        }
 
-        return super.onOptionsItemSelected(item);
-    }
-
-    public boolean onCreateOptionsMenu(Menu menu) {
-        return true;
-    }
 
 
     public void howManyHoursWork(View view){
         final float HOWMANYHOURS_TEXTSIZE = 20;
 
-        final LinearLayout linearLayout = (LinearLayout) findViewById(R.id.linear_layout);
-        TextView howManyHoursText = new TextView(EditProfile.this);
-        howManyHoursText.setText("Tudo bem, mas quantas horas por dia de trabalho?");
-        howManyHoursText.setTextSize(HOWMANYHOURS_TEXTSIZE);
-        howManyHoursText.setTextColor(getResources().getColor(R.color.colorPrimary));
+        if(!howManyHoursOpen) {
+            final LinearLayout linearLayout = (LinearLayout) findViewById(R.id.linear_layout);
+            TextView howManyHoursText = new TextView(EditProfile.this);
+            howManyHoursText.setText("Tudo bem, mas quantas horas por dia de trabalho?");
+            howManyHoursText.setTextSize(HOWMANYHOURS_TEXTSIZE);
+            howManyHoursText.setTextColor(getResources().getColor(R.color.colorPrimary));
 
-        final EditText howManyHoursAnswer = new EditText(EditProfile.this);
-        howManyHoursAnswer.setId(HOURS_ANSWER_ID);
-        howManyHoursAnswer.setHint("Insira apenas um número de horas(ex: 8)");
-        howManyHoursAnswer.setTextSize(14);
+            final EditText howManyHoursAnswer = new EditText(EditProfile.this);
+            howManyHoursAnswer.setId(HOURS_ANSWER_ID);
+            howManyHoursAnswer.setHint("Insira apenas um número de horas(ex: 8)");
+            howManyHoursAnswer.setTextSize(14);
 
-        linearLayout.addView(howManyHoursText);
-        linearLayout.addView(howManyHoursAnswer);
+            linearLayout.addView(howManyHoursText);
+            linearLayout.addView(howManyHoursAnswer);
+
+            howManyHoursOpen = true;
+        }
     }
 
     public void doNotWork(View view){
         final LinearLayout linearLayout = (LinearLayout) findViewById(R.id.linear_layout);
         linearLayout.removeAllViews();
+
+        howManyHoursOpen = false;
     }
 
 
@@ -207,6 +199,13 @@ public class EditProfile extends AppCompatActivity {
         cancel.show();
     }
 
+    @Override
+    public void onBackPressed() // Impede que o usuário saia se
+    {
+        View view = null;
+        onCreateDialog_Cancel(view);
+    }
+
 
     public void saveInformation(android.view.View view){
         saveAge(view);
@@ -236,6 +235,8 @@ public class EditProfile extends AppCompatActivity {
             //    linhas comentadas abaixo feitas para teste
             //String horas = PreferenceManager.getDefaultSharedPreferences(this).getString("HORAS_TRABALHO", "NOT_FOUND");
             //Toast.makeText(this, horas, Toast.LENGTH_SHORT).show();
+        }else{
+            PreferenceManager.getDefaultSharedPreferences(this).edit().putString("HORAS_TRABALHO", "0").apply();
         }
 
     }
@@ -257,6 +258,62 @@ public class EditProfile extends AppCompatActivity {
         //    linhas comentadas abaixo feitas para teste
         //String nome = PreferenceManager.getDefaultSharedPreferences(this).getString("NOME", "NOT_FOUND");
         //Toast.makeText(this, nome, Toast.LENGTH_SHORT).show();
+    }
+
+    private void setValuesFromSharedPreferences(){
+        EditText inputAge = (EditText) findViewById(R.id.ageText);
+        EditText inputName = (EditText) findViewById(R.id.nameText);
+        RadioGroup conditionGroup = (RadioGroup) findViewById(R.id.conditionRadioGroup);
+        RadioGroup workGroup = (RadioGroup) findViewById(R.id.radioGroup);
+
+        String idade = PreferenceManager.getDefaultSharedPreferences(this).getString("IDADE", "NOT_FOUND");
+        if(!idade.equals("NOT_FOUND")){
+            inputAge.setText(idade);
+        }
+
+        String nome = PreferenceManager.getDefaultSharedPreferences(this).getString("NOME", "NOT_FOUND");
+        if(!nome.equals("NOT_FOUND")){
+            inputName.setText(nome);
+        }
+
+        String cond = PreferenceManager.getDefaultSharedPreferences(this).getString("HEALTH_CONDITION", "NOT_FOUND");
+        int condCount = conditionGroup.getChildCount();
+        for (int i=0; i<condCount; i++) {
+            RadioButton opcao = (RadioButton) conditionGroup.getChildAt(i);
+            if(opcao.getText().equals(cond)){
+                opcao.setChecked(true);
+            }
+        }
+
+        String hoursWork = PreferenceManager.getDefaultSharedPreferences(this).getString("HORAS_TRABALHO", "NOT_FOUND");
+        if(Integer.parseInt(hoursWork) > 0) {
+            RadioButton sim = (RadioButton) workGroup.getChildAt(0);
+            sim.setChecked(true);
+            View view = null;
+            howManyHoursWork(view);
+            EditText hours_answer = (EditText) findViewById(HOURS_ANSWER_ID);
+            hours_answer.setText(hoursWork);
+        }else if(Integer.parseInt(hoursWork) == 0){
+            RadioButton nao = (RadioButton) workGroup.getChildAt(1);
+            nao.setChecked(true);
+        }
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                //finish();
+                View view = null;
+                onCreateDialog_Cancel(view);
+                return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    public boolean onCreateOptionsMenu(Menu menu) {
+        return true;
     }
 
 }
