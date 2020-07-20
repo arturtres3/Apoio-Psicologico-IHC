@@ -57,17 +57,16 @@ Enquanto faz esse exercício, escute esta música : https://www.youtube.com/watc
     <string name="condition_empty_message">Nenhuma condição de saúde selecionada! Selecione uma!</string>
     <string name="invalid_name_message">Nome inválido!</string>
     <string name="empty_name_message">Você não colocou nenhum nome.</string>
-    <string name="morning_improveText">Aproveite este longo dia! Reserve um tempo para</string>
-    <string name="afternoon_improveText">Está ocupado? Dê uma pausa para respirar fundo e</string>
-    <string name="night_improveText">Se possível, relaxe. Faça </string>
+    <string name="morning_improveText">Aproveite este longo dia! Reserve alguns minutos para fazer uma atividade física!</string>
+    <string name="afternoon_improveText">Está ocupado? Dê uma pausa para respirar fundo e arejar a cabeça.</string>
+    <string name="night_improveText">Se possível, relaxe. É importante ter uma boa noite de sono!</string>
     <string name="fearCondition_improveText">Seus medos são uma reação normal e instintiva do corpo para pressentir perigos. Você pode superá-los! </string>
     <string name="sadnessCondition_improveText">Toda tempestade termina. Tudo vai dar certo!</string>
     <string name="thoughtsCondition_improveText">Não acredite em tudo o que você pensa, e não se incomode tanto. Pensamentos são só o que são: pensamentos. Nada mais.</string>
     <string name="stressCondition_improveText">Reserve um instante para fazer o exercício de respiração abaixo.</string>
-    <string name="insomniaCondition_improveText">Tente se cansar muito fisicamente durante o dia, e não durma durante o dia!</string>
+    <string name="insomniaCondition_improveText">Tente se cansar muito fisicamente durante o dia, e não durma durante o dia! Use o exercício abaixo para relaxar!</string>
     <string name="chestCondition_improveText">Tente se desgastar fisicamente durante o dia. Faça exercícios físicos aeróbicos, em casa ou em outros locais!</string>
-    <string name="seila">testando</string>
-    <string name="monday_improveText">Início de semana! Comece de cabeça erguida!</string>
+    <string name="monday_improveText">Hoje é início de semana! Comece de cabeça erguida!</string>
     <string name="tuesday_improveText">Busque a tranquilidade hoje, tenha paciência!</string>
     <string name="wednesday_improveText">Metade da semana! Acredite no teu potencial, segue firme!</string>
     <string name="thursday_improveText">"O insucesso é apenas uma oportunidade para recomeçar com mais inteligência." Henry Ford</string>
@@ -76,6 +75,6 @@ Enquanto faz esse exercício, escute esta música : https://www.youtube.com/watc
     <string name="sunday_improveText">Domingo, já? O tempo voa. Mas seja o piloto e confie em si mesmo! Você consegue!</string>
     <string name="stressPlusMuchWork_improveText">Já considerou se seu trabalho tá te estressando? Se possível, pode ser uma boa ideia reduzir o tempo de trabalho e fazer pausas regulares</string>
     <string name="oldPlusSad_improveText">Faça um esporte prazeroso no seu tempo livre! Não se esqueça de cuidar da saúde.</string>
-    <string name="youngPlusAnxiety_improveText">Você se considera ansioso? Talvez seja bom procurar um tratamento. Tente fazer um esporte fisicamente exigente em alguma hora do seu dia!</string>
-
+    <string name="youngPlusAnxiety_improveText">Você se considera ansioso? Tente fazer um esporte fisicamente exigente em alguma hora do seu dia. Mantenha a respiração regular com o exercício abaixo!</string>
+    <string name="childAndFear_improveText">Faça o exercício abaixo para relaxar um pouco e mudar seu foco.</string>
 </resources>

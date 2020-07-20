@@ -7,10 +7,15 @@ import androidx.core.view.ViewCompat;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.text.Html;
 import android.view.Gravity;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -40,6 +45,9 @@ public class ImproveYourDay extends AppCompatActivity {
         setContentView(R.layout.activity_improve_your_day);
         putText(greetings(),false);
         customText();
+        customExercise();
+        //createButtonToBreathExercise();
+        //createButtonToRelaxExercise();
     }
 
     public String greetings(){
@@ -73,12 +81,17 @@ public class ImproveYourDay extends AppCompatActivity {
         novaEntrada.setId(id);
         novaEntrada.setText(text);
         novaEntrada.setPadding(20,20,20,20);
+        //novaEntrada.setText(Html.fromHtml(getString(R.string.hello_worldRed)));
         //novaEntrada.setGravity(Gravity.CENTER);
         //novaEntrada.setBackgroundColor(getResources().getColor(R.color.Coisas));
         novaEntrada.setLayoutParams(params);
         if (isTitle) {
             novaEntrada.setTextSize(GREETINGS_TEXTSIZE);
             novaEntrada.setTextColor(getResources().getColor(R.color.colorPrimary));
+        }
+        else{
+            novaEntrada.setTextColor(getResources().getColor(R.color.improveYourDay));
+            novaEntrada.setTypeface(null, Typeface.BOLD);
         }
         layout.addView(novaEntrada);
     }
@@ -132,6 +145,8 @@ public class ImproveYourDay extends AppCompatActivity {
             putText(getResources().getString(R.string.oldPlusSad_improveText), false);
         else if(isYoungAdultAndAnsious(userHealthCondition, userAge))
             putText(getResources().getString(R.string.youngPlusAnxiety_improveText), false);
+        else if(isChildAndScared(userHealthCondition, userAge))
+            putText(getResources().getString(R.string.childAndFear_improveText), false);
     }
 
 
@@ -147,46 +162,82 @@ public class ImproveYourDay extends AppCompatActivity {
         return age >= IDADE_ADULTO && age <= IDADE_IDOSO && health.equals("Queimação no peito");
     }
 
+    private boolean isChildAndScared(String health, int age){
+        return age <= IDADE_CRIANÇA && health.equals("Medo");
+    }
+
 
     //monta o texto
     private void customText(){
-        int age = Integer.parseInt(getUserAge());
-        String healthCond = getUserHealthCondition();
-        int work;
-
-        if(getUserHoursOfWork().equals("NOT_FOUND")){
-            work = 0;
-        }else{
-            work = Integer.parseInt(getUserHoursOfWork());
-        }
-
-        /*texto idade
-        if(age > 0 && age < IDADE_CRIANÇA){
-            putText("Idade menor que 13 TEXTO", false);
-        }else if(age > IDADE_CRIANÇA && age < IDADE_ADULTO){
-            putText("Idade entre 14-18 TEXTO", false);
-        }else if(age > IDADE_ADULTO && age< IDADE_IDOSO){
-            putText("Idade entre 19-59 TEXTO", false);
-        }else if(age > IDADE_IDOSO){
-            putText("Idade maior que 60 TEXTO", false);
-        } */
-
-        /*texto trabalho
-        if(work == 0){
-            putText("Não trabalha TEXTO", false);
-        }else if(work > 0 && work < TRAB_MIN){
-            putText("Trabalha entre 0-6hrs TEXTO", false);
-        }else if(work > TRAB_MIN && work < TRAB_MAX){
-            putText("Trabalha entre 6-9hrs TEXTO", false);
-        }else if(work > TRAB_MAX){
-            putText("Trabalha mais que 9hrs TEXTO", false);
-        } */
 
         customTextWeekDay();
         customTextHealthCondition();
         customTextInfoCombinations();
 
+    }
 
+    private void customExercise(){
+        breathExercise();
+        relaxExercise();
+    }
+
+    private void breathExercise(){
+        String userHealthCondition = getUserHealthCondition();
+        int userAge = Integer.parseInt(getUserAge());
+        if(userHealthCondition.equals("Estresse") || isYoungAdultAndAnsious(userHealthCondition, userAge))
+            createButtonToBreathExercise();
+    }
+
+    private void relaxExercise(){
+        String userHealthCondition = getUserHealthCondition();
+        int userAge = Integer.parseInt(getUserAge());
+        if(userHealthCondition.equals("Insônia") || isChildAndScared(userHealthCondition, userAge))
+            createButtonToRelaxExercise();
+    }
+
+
+    public void createButtonToBreathExercise(){
+        LinearLayout layout = (LinearLayout) findViewById(R.id.layoutImprove);
+
+        Button interactionButton = new Button(this);
+        interactionButton.setText("COMEÇAR!");
+        interactionButton.setBackgroundColor(getResources().getColor(R.color.improveYourDayStartBreathExercise));
+        interactionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goToBreathExercise();
+            }
+        });
+        layout.addView(interactionButton);
+    }
+
+    public void createButtonToRelaxExercise(){
+        LinearLayout layout = (LinearLayout) findViewById(R.id.layoutImprove);
+
+        Button interactionButton = new Button(this);
+        interactionButton.setText("COMEÇAR!");
+        interactionButton.setBackgroundColor(getResources().getColor(R.color.improveYourDayStartRelaxExercise));
+        interactionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goToRelaxSongExercise();
+            }
+        });
+
+        layout.addView(interactionButton);
+
+    }
+
+    public void goToBreathExercise(){
+        Intent breathExercise = new Intent(this, BreathExercise.class);
+
+        startActivity(breathExercise);
+    }
+
+    public void goToRelaxSongExercise(){
+        Intent relaxSong = new Intent(this, RelaxExercise.class);
+
+        startActivity(relaxSong);
     }
 
     public String getDateFormat(String format){
@@ -212,6 +263,8 @@ public class ImproveYourDay extends AppCompatActivity {
     }
 
     public void backToMainPage(View view){
+        LinearLayout layout = (LinearLayout) findViewById(R.id.layoutImprove);
+        layout.removeAllViews();
         Intent backToMain = new Intent(this, MainActivity.class);
 
         startActivity(backToMain);
