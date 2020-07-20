@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
@@ -31,16 +33,26 @@ public class RelaxExercise extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 relaxSong.stop();
-                backToImproveYourDay();
+                onBackPressed();
             }
         });
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
-    public void backToImproveYourDay(){
-        Intent backToImproveUrDay = new Intent(this, ImproveYourDay.class);
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                return true;
+        }
 
-        startActivity(backToImproveUrDay);
+        return super.onOptionsItemSelected(item);
+    }
+
+    public boolean onCreateOptionsMenu(Menu menu) {
+        return true;
     }
 
 

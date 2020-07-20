@@ -9,6 +9,7 @@ import android.preference.PreferenceManager;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -85,12 +86,15 @@ public class coisas_que_me_afetam extends AppCompatActivity {
     public void Selected (android.view.View view){
         //TextView coisaSelecionada = (TextView) findViewById(view.getId());
         int ID = view.getId();
+        Button apagar = findViewById(R.id.button6);
 
         if(selectedCoisaId == ID){
             view.setBackgroundColor(getResources().getColor(R.color.Coisas));
+            apagar.setBackgroundColor(getResources().getColor(R.color.gray_button));
             selectedCoisaId = 0;
         }else{
-            view.setBackgroundColor(getResources().getColor(R.color.colorAccent));
+            view.setBackgroundColor(getResources().getColor(R.color.holo_orange));
+            apagar.setBackgroundColor(getResources().getColor(R.color.holo_orange));
 
             LinearLayout layout = (LinearLayout) findViewById(R.id.lista);
             int childcount = layout.getChildCount();
@@ -109,6 +113,7 @@ public class coisas_que_me_afetam extends AppCompatActivity {
     public void Delete(android.view.View view){
         TextView coisaSelecionada = (TextView) findViewById(selectedCoisaId);
         String lista_de_coisas_raw = PreferenceManager.getDefaultSharedPreferences(this).getString("COISAS_QUE_ME_AFETAM", "NOT_FOUND");
+        Button apagar = findViewById(R.id.button6);
 
         LinearLayout layout = (LinearLayout) findViewById(R.id.lista);
         int childcount = layout.getChildCount();
@@ -118,6 +123,7 @@ public class coisas_que_me_afetam extends AppCompatActivity {
             if(coisa.getId() == selectedCoisaId){
                 deleteText(lista_de_coisas_raw, i);
                 layout.removeView(findViewById(selectedCoisaId));
+                apagar.setBackgroundColor(getResources().getColor(R.color.gray_button));
                 childcount--;
             }
         }

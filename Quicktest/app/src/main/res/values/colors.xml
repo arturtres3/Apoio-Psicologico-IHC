@@ -8,4 +8,6 @@
     <color name="improveYourDay">#FF9900</color>
     <color name="improveYourDayStartBreathExercise">#FF6633</color>
     <color name="improveYourDayStartRelaxExercise">#33CCFF</color>
+    <color name="holo_orange">#FF8800</color>
+    <color name="gray_button">#d3d3d3</color>
 </resources>

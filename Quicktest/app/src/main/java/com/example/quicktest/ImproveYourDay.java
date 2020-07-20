@@ -81,9 +81,7 @@ public class ImproveYourDay extends AppCompatActivity {
         novaEntrada.setId(id);
         novaEntrada.setText(text);
         novaEntrada.setPadding(20,20,20,20);
-        //novaEntrada.setText(Html.fromHtml(getString(R.string.hello_worldRed)));
-        //novaEntrada.setGravity(Gravity.CENTER);
-        //novaEntrada.setBackgroundColor(getResources().getColor(R.color.Coisas));
+        novaEntrada.setTextSize(17);
         novaEntrada.setLayoutParams(params);
         if (isTitle) {
             novaEntrada.setTextSize(GREETINGS_TEXTSIZE);

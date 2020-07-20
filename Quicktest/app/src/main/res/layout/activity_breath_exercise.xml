@@ -10,34 +10,48 @@
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="301dp"
-        android:layout_marginEnd="157dp"
-        android:layout_marginRight="157dp"
-        android:text="Button"
+        android:layout_marginTop="123dp"
+        android:layout_marginBottom="156dp"
+        android:text="Respire"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <ProgressBar
         android:id="@+id/progressBar"
-        style="?android:attr/progressBarStyleHorizontal"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
         android:layout_width="260dp"
-        android:layout_height="68dp"
-        android:layout_marginEnd="75dp"
-        android:layout_marginRight="75dp"
-        android:layout_marginBottom="272dp"
+        android:layout_height="23dp"
+        android:layout_marginTop="59dp"
         android:max="100"
         android:progress="10"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView40" />
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="119dp"
-        android:layout_height="46dp"
-        android:layout_marginEnd="133dp"
-        android:layout_marginRight="133dp"
-        android:layout_marginBottom="160dp"
-        android:text="button pressed"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/progressBar" />
+
+    <TextView
+        android:id="@+id/textView40"
+        android:layout_width="227dp"
+        android:layout_height="172dp"
+        android:layout_marginTop="95dp"
+        android:gravity="center"
+        android:text="Respire fundo enquanto segura o botão, e expire junto com a barra quando soltar o botão"
+        android:textColor="@color/improveYourDayStartBreathExercise"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
