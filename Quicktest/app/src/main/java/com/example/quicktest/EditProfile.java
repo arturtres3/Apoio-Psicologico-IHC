@@ -55,12 +55,12 @@ public class EditProfile extends AppCompatActivity {
 
 
     public void howManyHoursWork(View view){
-        final float HOWMANYHOURS_TEXTSIZE = 20;
+        final float HOWMANYHOURS_TEXTSIZE = 18;
 
         if(!howManyHoursOpen) {
             final LinearLayout linearLayout = (LinearLayout) findViewById(R.id.linear_layout);
             TextView howManyHoursText = new TextView(EditProfile.this);
-            howManyHoursText.setText("Tudo bem, mas quantas horas por dia de trabalho?");
+            howManyHoursText.setText("Quantas horas por dia de trabalho?");
             howManyHoursText.setTextSize(HOWMANYHOURS_TEXTSIZE);
             howManyHoursText.setTextColor(getResources().getColor(R.color.colorPrimary));
 
