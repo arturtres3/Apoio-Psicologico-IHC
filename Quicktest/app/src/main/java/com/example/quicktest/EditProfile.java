@@ -2,6 +2,7 @@ package com.example.quicktest;
 
 import android.annotation.SuppressLint;
 import android.icu.text.TimeZoneFormat;
+import android.text.InputType;
 import android.widget.RadioGroup;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.ViewCompat;
@@ -68,6 +69,7 @@ public class EditProfile extends AppCompatActivity {
             howManyHoursAnswer.setHint("Insira apenas um número de horas(ex: 8)");
             howManyHoursAnswer.setTextSize(14);
 
+            howManyHoursAnswer.setInputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_FLAG_DECIMAL | InputType.TYPE_NUMBER_FLAG_SIGNED);
             linearLayout.addView(howManyHoursText);
             linearLayout.addView(howManyHoursAnswer);
 
@@ -230,7 +232,8 @@ public class EditProfile extends AppCompatActivity {
         if(findViewById(HOURS_ANSWER_ID) != null){
             EditText hours_answer = (EditText) findViewById(HOURS_ANSWER_ID);
             String hours = hours_answer.getText().toString();
-            PreferenceManager.getDefaultSharedPreferences(this).edit().putString("HORAS_TRABALHO", hours).apply();
+            if(!hours.equals(""))
+                PreferenceManager.getDefaultSharedPreferences(this).edit().putString("HORAS_TRABALHO", hours).apply();
             hours_answer.setText("");
             //    linhas comentadas abaixo feitas para teste
             //String horas = PreferenceManager.getDefaultSharedPreferences(this).getString("HORAS_TRABALHO", "NOT_FOUND");
@@ -277,25 +280,29 @@ public class EditProfile extends AppCompatActivity {
         }
 
         String cond = PreferenceManager.getDefaultSharedPreferences(this).getString("HEALTH_CONDITION", "NOT_FOUND");
-        int condCount = conditionGroup.getChildCount();
-        for (int i=0; i<condCount; i++) {
-            RadioButton opcao = (RadioButton) conditionGroup.getChildAt(i);
-            if(opcao.getText().equals(cond)){
-                opcao.setChecked(true);
+        if(!cond.equals("NOT_FOUND")){
+            int condCount = conditionGroup.getChildCount();
+            for (int i=0; i<condCount; i++) {
+                RadioButton opcao = (RadioButton) conditionGroup.getChildAt(i);
+                if (opcao.getText().equals(cond)) {
+                    opcao.setChecked(true);
+                }
             }
         }
 
         String hoursWork = PreferenceManager.getDefaultSharedPreferences(this).getString("HORAS_TRABALHO", "NOT_FOUND");
-        if(Integer.parseInt(hoursWork) > 0) {
-            RadioButton sim = (RadioButton) workGroup.getChildAt(0);
-            sim.setChecked(true);
-            View view = null;
-            howManyHoursWork(view);
-            EditText hours_answer = (EditText) findViewById(HOURS_ANSWER_ID);
-            hours_answer.setText(hoursWork);
-        }else if(Integer.parseInt(hoursWork) == 0){
-            RadioButton nao = (RadioButton) workGroup.getChildAt(1);
-            nao.setChecked(true);
+        if(!hoursWork.equals("NOT_FOUND")) {
+            if (Integer.parseInt(hoursWork) > 0) {
+                RadioButton sim = (RadioButton) workGroup.getChildAt(0);
+                sim.setChecked(true);
+                View view = null;
+                howManyHoursWork(view);
+                EditText hours_answer = (EditText) findViewById(HOURS_ANSWER_ID);
+                hours_answer.setText(hoursWork);
+            } else if (Integer.parseInt(hoursWork) == 0) {
+                RadioButton nao = (RadioButton) workGroup.getChildAt(1);
+                nao.setChecked(true);
+            }
         }
     }
 
